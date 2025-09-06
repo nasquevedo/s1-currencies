@@ -13,6 +13,7 @@ Lo atributos son obligatorios y se mostrara un mensaje en caso de no enviarlos.
 ## Requerimientos
 - PHP 7.4
 - PHP CLI 7.4
+- Git
 
 ## Configuracion
 Para configurar el proyecto localmente se deben seguir unos pocos pasos:
