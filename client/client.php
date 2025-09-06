@@ -2,17 +2,53 @@
 
 require_once('./trait/ReadEnv.php');
 
+/**
+ * Client Class
+ * 
+ * Clase cliente para realizar operaciones al api externo
+ * (fastforex)
+ * 
+ * @access public
+ * @author <Santiago Quevedo> qesantiago@gmail.com
+ */
 class Client
 {
-    use ReadEnv;
+    use ReadEnv; // uso del trait para obtener las variables de entorno
 
+    /**
+     * @var array env almacena las variables de 
+     * entorno tomadas del archivo .env 
+     */
     private array $env;
 
+    /**
+     * Construct Method
+     * 
+     * Metodo que construye el objeto
+     * Al momento de instanciar obtiene
+     * las variables de entorno
+     * 
+     * @access public
+     * @author <Santiago Quevedo> qesantiago@gmail.com
+     * @return void
+     */
     public function __construct()
     {
         $this->env = $this->read();
     }
 
+    /**
+     * fetchOne Method
+     * 
+     * Metodo que obtiene el valor de la divisa con respecto a
+     * la moneda base y la moneda a consultar, unicamente valida
+     * una moneda a la vez
+     * 
+     * @access public
+     * @author <Santiago Quevedo> qesantiago@gmail.com
+     * @param string $to moneda a consultar
+     * @return array
+     */
     public function fetchOne($to)
     {
         $fetchOneEndpoint = $this->env['API_FETCH_ONE_ENDPOINT'];
