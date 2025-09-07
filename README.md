@@ -27,7 +27,7 @@ Seguido de esto moverse a la carpeta creada: ``` cd s1-currencies ```
 
 Una vez estando en el proyecto copiar el contenido del archivo .env.local a .env para crearlo: ```cp .env.local .env ```
 
-Incluir el api key enviado por correo.
+Incluir el api key enviado al correo en el archivo .env.
 
 Por ultimo ejecutar el comando usando PHP CLI:
 ```sh
