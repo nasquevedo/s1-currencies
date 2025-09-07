@@ -55,14 +55,14 @@ class Converter
             $client = new Client();
             $response = $client->fetchOne($this->to);
             $base = $response['base'];
-            $baseCurrencyValue = round($response['result'][$this->to]);
-            $convertion = $this->amount / (int)$baseCurrencyValue;
+            $baseCurrencyValue = round($response['result'][$this->to], 2);
+            $convertion = $this->amount / (float)$baseCurrencyValue;
             $data = [
                 "success" => true,
                 "result" => [
                     "base" => $base,
                     "base_currency_value" => $baseCurrencyValue,
-                    "convertion" => round($convertion)
+                    "convertion" => round($convertion, 2)
                 ]
             ];
 
