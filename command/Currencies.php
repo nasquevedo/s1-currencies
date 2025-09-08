@@ -71,7 +71,7 @@ class CurrenciesCommand implements CommandInterface
             exit();
         }
 
-        echo "Error al intentar convertir el monto " . $data['error'];
+        echo "Error al intentar convertir el monto " . $data['error']. ".\n";
         exit();
     }
 }

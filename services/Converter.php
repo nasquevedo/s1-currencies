@@ -70,7 +70,7 @@ class Converter
         } catch (Exception $error) {
             $data = [
                 "success" => false,
-                "error" => $error
+                "error" => $error->getMessage()
             ];
 
             return $data;

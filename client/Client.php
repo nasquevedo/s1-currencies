@@ -71,11 +71,11 @@ class Client
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
+        // die($response);
         curl_close($curl);
 
-        if ($err) {
-            throw new Exception("cURL Error #:" . $err);
+        if (isset(json_decode($response, true)['error'])) {
+            throw new Exception("cURL Error #: " . json_decode($response, true)['error'] );
         }
         
         return json_decode($response, true);
